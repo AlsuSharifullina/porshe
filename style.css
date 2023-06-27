@@ -93,7 +93,7 @@ h3 {
     color: #787878;
     letter-spacing: 0.66em;
     cursor: default;
-    /* font-size: 242px; */
+
 }
 
 .header_content_container:hover .header-top-half{
@@ -188,7 +188,7 @@ h3 {
     content: 'Модели';
 }
 
-/* есть ли разница в написании,ховер раньше или бифоре */
+
 .nav_item:hover::before {
     border: 1px solid #000;
     background: #8D4545;
@@ -211,7 +211,7 @@ h3 {
     padding: 100px 0;
 }
 
-/* почему минимальный мин хейд и тут так махс  */
+
 .history-container {
     max-width: 1440px;
     width: 100%;
@@ -254,7 +254,7 @@ h3 {
     font-weight: bold;
 }
 
-/* дз */
+
 .dates {
     height: 300px;
     max-width: 1440px;
@@ -299,7 +299,7 @@ h3 {
 .dates-years {
     color: #848484;
 }
- /* дз */
+
 
 .models {
     width: 100%;
