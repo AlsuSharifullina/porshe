@@ -1,0 +1,627 @@
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("fonts/CormorantInfant-Light.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Cormorant Infant";
+    src: url("fonts/CormorantInfant-Regular.ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family:  "Cormorant Infant";
+    src: url("fonts/CormorantInfant-Medium.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family:  "Cormorant Infant";
+    src: url("fonts/CormorantInfant-SemiBold.ttf");
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Infant', serif;
+}
+html {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 8rem;
+    font-weight: 300;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+.header_content_container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.header_content_container video {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header-top-half{
+    height: 50%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: 0.7s;
+}
+
+.header-bottom-half {
+    height: 50%;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transition: 0.7s;
+}
+
+.header-title {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+    color: #787878;
+    letter-spacing: 0.66em;
+    cursor: default;
+    /* font-size: 242px; */
+}
+
+.header_content_container:hover .header-top-half{
+    transform: translateY(-90%);
+}
+
+.header_content_container:hover .header-bottom-half {
+    transform: translateY(90%);
+}
+
+.header-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30%;
+    background: #8D4545;
+    border-radius: 20px;
+    padding: 41px 130px;
+    z-index: 3;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    transition: 0.1s;
+}
+
+.header-btn::before{
+    content: url("img/bottom/bottom_left.png");
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: -80px;
+}
+
+.header-btn::after {
+    content: url("img/bottom/bottom_right.png");
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: -80px;
+}
+
+.header-btn:hover{
+    background:  #743838;
+    transform: translateX(-50%) scale(1.1);
+}
+
+.navigation {
+    width: 130px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.25);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 15px;
+}
+
+.nav_items {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav_item {
+    text-decoration: none;
+    position: relative;
+}
+
+.nav_item::before {
+    position: absolute;
+    top: 50%;
+    left:0;
+    background: white;
+    width: 0;
+    overflow: hidden;
+    transform: translateY(-50%);
+}
+
+.nav_item:first-of-type::before{
+    content: 'Главная';
+}
+
+.nav_item:nth-of-type(2)::before{
+    content: 'История';
+}
+
+.nav_item:nth-of-type(3)::before{
+    content: 'Этапы';
+}
+
+.nav_item:last-of-type::before{
+    content: 'Модели';
+}
+
+/* есть ли разница в написании,ховер раньше или бифоре */
+.nav_item:hover::before {
+    border: 1px solid #000;
+    background: #8D4545;
+    padding: 15px 55px;
+    width: 100px;
+    color: white;
+    transform: translate(-100%, -50%);
+    transition: 0.2s;
+}
+
+.nav_item:hover img {
+    transform: scale(0.9);
+    background: #8D4545;
+    transition: 0.2s;
+}
+
+.history {
+    width: 100%;
+    min-height: 700px;
+    padding: 100px 0;
+}
+
+/* почему минимальный мин хейд и тут так махс  */
+.history-container {
+    max-width: 1440px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.history-left {
+    width: 50%;
+
+}
+
+.history-right {
+    width: 50%;
+    height: 600px;
+    overflow: hidden;
+    position: relative;
+}
+
+.history-images{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    animation: pic_change 8s linear 0s infinite;
+}
+.history-title::first-letter{
+    font-size: 4rem;
+}
+
+.history-text {
+    color: #848484;
+}
+
+.history-text::first-line{
+    color: #000;
+    font-weight: bold;
+}
+
+/* дз */
+.dates {
+    height: 300px;
+    max-width: 1440px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.events {
+    height: 2rem;
+    overflow: hidden;
+}
+
+.dates-title {
+    text-align: center;
+    width: 100%;
+}
+
+.dates-title::first-letter {
+    font-size: 4rem;
+}
+
+.dates-event {
+    line-height: 2rem;
+    width: 55%;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    position: relative;
+    animation: event_change 25s linear 0s infinite;
+}
+
+.dates-event::before {
+    content: url(img/icons/porsche-logo.png);
+    height: 1.5rem;
+}
+
+.dates-years {
+    color: #848484;
+}
+ /* дз */
+
+.models {
+    width: 100%;
+    padding: 100px 0
+}
+
+.models-container{
+    max-width: 1440px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.models-title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 90px;
+}
+
+.models-title::first-letter {
+    font-size: 4rem;
+}
+
+.model-item {
+    width: fit-content;
+    position: relative;
+}
+
+.model-item:nth-of-type(2n+1) {
+    margin-left: auto;
+}
+
+.models-list {
+    list-style: none;
+}
+
+.model-item-desc{
+    cursor: default;
+    position: absolute;
+    width: fit-content;
+    max-width: 700px;
+    top: 50%;
+    padding: 45px 58px;
+    background: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.model-item-desc p{
+    margin-top: 20px;
+    color: #848484;
+}
+
+.model-item-desc p::first-letter{
+    color: #000;
+    font-size: bold;
+}
+
+.model-item:nth-of-type(2n) .model-item-desc  {
+    right: 0;
+    transform: translate(90%, -50%);
+}
+
+.model-item:nth-of-type(2n+1) .model-item-desc {
+    left: 0;
+    transform: translate(-90%, -50%);
+}
+
+.model-item-desc::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.model-item-desc::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 3px;
+    background: #000;
+    transition: 0.3s;
+}
+
+.model-item-desc:hover::after, .model-item-desc:hover::before{
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 540px;
+    max-width: 1440px;
+    width: 100%;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 0 auto;
+
+}
+
+footer p::first-letter{
+    font-size: 4rem;
+}
+
+.mobile_header{
+    display: none;
+}
+
+
+
+@keyframes pic_change {
+    0% {
+        left: 0;
+    }
+    33% {
+        left: -100%;
+    }
+    66% {
+        left: -200%;
+    }
+    100%{
+        left: -300%;
+    }
+}
+
+@keyframes event_change{
+    0%{
+        top: 0;
+    }
+    33%{
+        top: -500%;
+    }
+    66%{
+        top: -1000%;
+    }
+    100%{
+        top: -1500%;
+    }
+}
+
+
+
+@media (max-width:700px) {
+    .navigation {
+        height: 80px;
+        width: 100%;
+        box-shadow: 0px 5px 20px (0, 0, 0, 0.25);
+    }
+
+    .nav_items {
+        flex-direction: row;
+    }
+
+    .nav_item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .nav_item img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav_item:first-of-type{
+        margin-right: auto;
+    }
+
+    .nav_item:hover::before{
+        display: none;
+    }
+
+    .nav_item:hover img {
+        transform: scale(1);
+        background: white;
+    }
+
+    .header_content_container:hover .header-top-half {
+        transform: translateY(0);
+    }
+
+    .header_content_container:hover .header-bottom-half {
+        transform: translateY(0);
+    }
+
+    .header_content_container video  {
+        display: none;
+    }
+    html {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    
+    h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .header-btn{
+        padding: 20px 65px;
+        border-radius: 5px;
+        bottom: 10%;
+    }
+
+    .header-btn::before, .header-btn::after {
+        content: "";
+    }
+
+    .header-btn::before{
+        background: url("img/bottom/bottom_left.png")center/cover no-repeat;
+        width: 45px;
+        left: -35px;
+        top: 5px;
+    }
+
+    .header-btn::after {
+        background: url("img/bottom/bottom_right.png")center/cover no-repeat;
+        width: 45px;
+        right: -35px;
+        top: 5px;
+    }
+
+    .mobile_header{
+        display: block;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+    }
+
+    .header-title{
+        top: 20%;
+    }
+
+    .history{
+        padding: 25px 30px;
+    }
+
+    .history-container{
+        flex-direction: column-reverse;
+    }
+    
+    .history-left, .history-right {
+        width: 100%;
+    }
+    .dates{
+        margin: 25px 30px;
+        width: fit-content;
+        height: 200px;
+    }
+    .events {
+        height: 2.5rem;
+        margin-top: 15px;
+    }
+    .dates-event{
+        margin: 0 auto;
+        width: 100%;
+        text-align: center;
+    }
+    footer{
+        width: 84%;
+        padding: 25px 30px;
+    }
+
+    .models {
+        padding: 25px 30px;
+    }
+
+    .model-item-desc {
+        position: static;
+    }
+
+    .model-item:nth-of-type(2n) .model-item-desc {
+        transform: translate(0, 0);
+    }
+
+    .model-item:nth-of-type(2n+1) .model-item-desc {
+        transform: translate(0, 0);
+    }
+
+    .model-item {
+        display: flex;
+        flex-direction: column;
+        flex-direction: column-reverse;
+        /* почему два раза? */
+        margin-bottom: 10px;
+    }
+
+    .model-item-desc{
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border: 1px solid black;
+        margin-top: 10px;
+    }
+
+    .model-item img {
+        width: 100%;
+    }
+
+    .model-item-desc::before ,.model-item-desc::after {
+        display: none;
+    }
+
+
+}
